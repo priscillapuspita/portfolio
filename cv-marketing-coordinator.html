@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priscilla Puspita - CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 10mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 9.5pt;
+            line-height: 1.35;
+            color: #333;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .cv-container {
+            width: 190mm;
+            min-height: 277mm;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Hide print headers/footers */
+        @media print {
+            @page { margin: 0; }
+            body { margin: 10mm; }
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-photo {
+            flex-shrink: 0;
+        }
+
+        .header-photo img {
+            width: 85px;
+            height: 106px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 2px solid #667eea;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .header h1 {
+            font-size: 23pt;
+            color: #333;
+            margin-bottom: 0.2rem;
+        }
+
+        .header .tagline {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 11.5pt;
+            margin-bottom: 0.35rem;
+        }
+
+        .header .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            font-size: 9pt;
+            color: #555;
+        }
+
+        /* Profile */
+        .profile-section {
+            margin-bottom: 0.65rem;
+        }
+
+        .profile-section h2 {
+            font-size: 12pt;
+            color: #667eea;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.35rem;
+            padding-bottom: 0.15rem;
+            border-bottom: 1px solid #e0e7ff;
+        }
+
+        .profile-text {
+            color: #444;
+            font-size: 10pt;
+            line-height: 1.5;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: flex;
+            gap: 1.2rem;
+            flex: 1;
+        }
+
+        .left-column {
+            flex: 0 0 57%;
+        }
+
+        .right-column {
+            flex: 0 0 43%;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 0.65rem;
+        }
+
+        .section h2 {
+            font-size: 12pt;
+            color: #667eea;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.35rem;
+            padding-bottom: 0.15rem;
+            border-bottom: 1px solid #e0e7ff;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 0.55rem;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 10.5pt;
+        }
+
+        .experience-company {
+            color: #667eea;
+            font-weight: 500;
+            font-size: 10pt;
+        }
+
+        .experience-meta {
+            font-size: 9pt;
+            color: #666;
+            margin-bottom: 0.2rem;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            margin-top: 0.2rem;
+            padding-left: 0;
+        }
+
+        .experience-item li {
+            color: #444;
+            font-size: 9.5pt;
+            line-height: 1.5;
+            padding: 0.08rem 0;
+            padding-left: 0.8rem;
+            position: relative;
+        }
+
+        .experience-item li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 10pt;
+        }
+
+        .experience-item strong {
+            color: #333;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 0.55rem;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-degree {
+            font-weight: 600;
+            color: #333;
+            font-size: 10.5pt;
+        }
+
+        .education-school {
+            color: #667eea;
+            font-size: 10pt;
+        }
+
+        .education-meta {
+            font-size: 9pt;
+            color: #666;
+        }
+
+        .thesis {
+            margin-top: 0.25rem;
+            padding: 0.25rem 0.4rem;
+            background: #f8f9fa;
+            border-left: 2px solid #667eea;
+            font-size: 9pt;
+        }
+
+        .thesis-label {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        /* Skills */
+        .skill-category {
+            margin-bottom: 0.45rem;
+        }
+
+        .skill-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-category h3 {
+            font-size: 10pt;
+            color: #667eea;
+            margin-bottom: 0.15rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.2rem;
+        }
+
+        .skill-category li {
+            color: #444;
+            font-size: 9pt;
+            background: #f5f7fa;
+            padding: 0.1rem 0.4rem;
+            border-radius: 2px;
+        }
+
+        /* Languages */
+        .languages-list {
+            font-size: 9.5pt;
+            color: #444;
+        }
+
+        .lang-item {
+            margin-bottom: 0.15rem;
+        }
+
+        .lang-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .lang-name {
+            font-weight: 600;
+        }
+
+        .lang-level {
+            color: #666;
+        }
+
+        /* Interests */
+        .interests {
+            font-size: 9.5pt;
+            color: #444;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-photo">
+                <img src="images/profile.jpg" alt="Priscilla Puspita">
+            </div>
+            <div class="header-content">
+                <h1>PRISCILLA PUSPITA</h1>
+                <p class="tagline">Marketing Coordinator</p>
+                <div class="contact-info">
+                    <span>📍 Gondel 14 29, Lelystad</span>
+                    <span>📞 +31 616 266402</span>
+                    <span>✉️ priscillapuspita11@gmail.com</span>
+                    <span>💼 linkedin.com/in/priscillapuspita</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Profile - Tailored for Marketing Coordinator -->
+        <section class="profile-section">
+            <h2>Profile</h2>
+            <p class="profile-text">Results-driven Marketing Coordinator with hands-on experience executing multi-channel campaigns across LinkedIn, email, and digital platforms. Skilled in CRM management, content creation, and campaign performance tracking. Proven ability to coordinate timelines, manage stakeholders, and deliver assets in fast-paced environments. Strong organizational skills with a detail-oriented, execution-focused approach. <strong>Available full-time and able to start immediately.</strong></p>
+        </section>
+
+        <div class="two-column">
+            <!-- Left Column: Experience -->
+            <div class="left-column">
+                <section class="section">
+                    <h2>Experience</h2>
+                    
+                    <!-- SkyTeam -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="experience-title">Marketing & Communications Intern</span>
+                            <span class="experience-company">— SkyTeam</span>
+                        </div>
+                        <div class="experience-meta">Amstelveen • 2025-2026</div>
+                        <ul>
+                            <li>Executed <strong>monthly email campaigns and LinkedIn content</strong> for 18 member airlines, reaching 500K+ active users</li>
+                            <li>Coordinated <strong>quarterly corporate events</strong> and marketing initiatives across multiple international markets</li>
+                            <li>Managed campaign timelines, assets, and stakeholder communications ensuring on-time delivery</li>
+                            <li>Tracked campaign performance metrics, achieving <strong>25% increase in engagement rates</strong> through data-driven optimizations</li>
+                        </ul>
+                    </div>
+
+                    <!-- GoTo Group -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="experience-title">Recruitment Marketing Coordinator</span>
+                            <span class="experience-company">— GoTo Group</span>
+                        </div>
+                        <div class="experience-meta">Jakarta • 2021-2022</div>
+                        <ul>
+                            <li>Managed end-to-end execution of <strong>10+ hiring campaigns</strong> across digital channels, reaching 10K+ potential candidates</li>
+                            <li>Coordinated campaign timelines and assets for <strong>200+ monthly workflows</strong>, ensuring smooth delivery across teams</li>
+                            <li>Executed LinkedIn content and email communications, improving response rates by <strong>30%</strong></li>
+                            <li>Maintained CRM data and campaign documentation, supporting reporting and performance tracking</li>
+                        </ul>
+                    </div>
+
+                    <!-- Occam -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="experience-title">Marketing Coordinator</span>
+                            <span class="experience-company">— Occam Komunikasi</span>
+                        </div>
+                        <div class="experience-meta">Jakarta • 2021</div>
+                        <ul>
+                            <li>Created marketing assets using <strong>Canva</strong> for 8+ concurrent client campaigns across tech, finance, and lifestyle sectors</li>
+                            <li>Developed <strong>50+ pieces of campaign content</strong> including social media posts, email newsletters, and digital ads</li>
+                            <li>Coordinated with 20+ media partners and suppliers to ensure timely delivery of campaign materials</li>
+                            <li>Managed multiple projects simultaneously in a fast-paced agency environment</li>
+                        </ul>
+                    </div>
+
+                    <!-- Jajanan -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="experience-title">Brand & Social Media Lead</span>
+                            <span class="experience-company">— Jajanan</span>
+                        </div>
+                        <div class="experience-meta">Groningen • 2025</div>
+                        <ul>
+                            <li>Executed <strong>Instagram content strategy</strong> for restaurant launch, managing posts, stories, and engagement</li>
+                            <li>Created marketing assets using AI-assisted tools and <strong>Canva</strong> for consistent brand visuals</li>
+                            <li>Managed end-to-end campaign execution from planning through launch, contributing to successful opening day</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column: Education, Skills, Languages -->
+            <div class="right-column">
+                <section class="section">
+                    <h2>Education</h2>
+                    
+                    <div class="education-item">
+                        <div class="education-degree">Master's in Media Studies, Datafication</div>
+                        <div class="education-school">University of Groningen</div>
+                        <div class="education-meta">2023-2026 • Digital platforms, campaign analytics</div>
+                        <div class="thesis">
+                            <span class="thesis-label">Thesis:</span> "The Strategic Science Communication of NASA & SpaceX on Instagram" (8.8)
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>Skills</h2>
+                    
+                    <div class="skill-category">
+                        <h3>Campaign Execution</h3>
+                        <ul>
+                            <li>Multi-channel Campaigns</li>
+                            <li>Timeline Coordination</li>
+                            <li>Stakeholder Management</li>
+                            <li>Asset Management</li>
+                            <li>Project Coordination</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Email Marketing</h3>
+                        <ul>
+                            <li>Newsletter Production</li>
+                            <li>HubSpot</li>
+                            <li>Mailchimp</li>
+                            <li>Campaign Build & Execute</li>
+                            <li>Performance Tracking</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Social Media & Digital</h3>
+                        <ul>
+                            <li>LinkedIn Management</li>
+                            <li>Instagram Content</li>
+                            <li>Content Scheduling</li>
+                            <li>Engagement Tracking</li>
+                            <li>Digital Campaigns</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>CRM & Marketing Ops</h3>
+                        <ul>
+                            <li>Microsoft Dynamics</li>
+                            <li>HubSpot CRM</li>
+                            <li>Campaign Tracking</li>
+                            <li>Data Management</li>
+                            <li>Workflow Documentation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Content & Design</h3>
+                        <ul>
+                            <li>Canva</li>
+                            <li>Photoshop</li>
+                            <li>Premiere Pro</li>
+                            <li>Visual Identity</li>
+                            <li>Brand Assets</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Analytics & Reporting</h3>
+                        <ul>
+                            <li>Google Analytics</li>
+                            <li>KPI Tracking</li>
+                            <li>Performance Reports</li>
+                            <li>Data Analysis</li>
+                            <li>Insights & Optimization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Microsoft Office</h3>
+                        <ul>
+                            <li>Excel</li>
+                            <li>PowerPoint</li>
+                            <li>Word</li>
+                            <li>Outlook</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>Languages</h2>
+                    <div class="languages-list">
+                        <div class="lang-item">
+                            <span class="lang-name">English</span> <span class="lang-level">— Native/Near-Native</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-name">Indonesian</span> <span class="lang-level">— Native</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-name">Dutch</span> <span class="lang-level">— A2-B1</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
