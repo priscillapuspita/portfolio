@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priscilla Puspita - CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 10mm; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; font-size: 9.5pt; line-height: 1.35; color: #333; }
+        .cv-container { width: 190mm; min-height: 277mm; margin: 0 auto; display: flex; flex-direction: column; }
+        @media print { @page { margin: 0; } body { margin: 10mm; } }
+        .header { display: flex; align-items: flex-start; gap: 1.2rem; padding-bottom: 0.5rem; border-bottom: 2px solid #667eea; margin-bottom: 0.5rem; }
+        .header-photo { flex-shrink: 0; }
+        .header-photo img { width: 85px; height: 106px; object-fit: cover; border-radius: 4px; border: 2px solid #667eea; }
+        .header-content { flex: 1; }
+        .header h1 { font-size: 23pt; color: #333; margin-bottom: 0.2rem; }
+        .header .tagline { color: #667eea; font-weight: 600; font-size: 11.5pt; margin-bottom: 0.35rem; }
+        .header .contact-info { display: flex; flex-wrap: wrap; gap: 0.6rem; font-size: 9pt; color: #555; }
+        .profile-section { margin-bottom: 0.65rem; }
+        .profile-section h2 { font-size: 12pt; color: #667eea; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; padding-bottom: 0.15rem; border-bottom: 1px solid #e0e7ff; }
+        .profile-text { color: #444; font-size: 10pt; line-height: 1.5; }
+        .two-column { display: flex; gap: 1.2rem; flex: 1; }
+        .left-column { flex: 0 0 57%; }
+        .right-column { flex: 0 0 43%; }
+        .section { margin-bottom: 0.65rem; }
+        .section h2 { font-size: 12pt; color: #667eea; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; padding-bottom: 0.15rem; border-bottom: 1px solid #e0e7ff; }
+        .experience-item { margin-bottom: 0.55rem; }
+        .experience-item:last-child { margin-bottom: 0; }
+        .experience-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+        .experience-title { font-weight: 600; color: #333; font-size: 10.5pt; }
+        .experience-company { color: #667eea; font-weight: 500; font-size: 10pt; }
+        .experience-meta { font-size: 9pt; color: #666; margin-bottom: 0.2rem; }
+        .experience-item ul { list-style: none; margin-top: 0.2rem; padding-left: 0; }
+        .experience-item li { color: #444; font-size: 9.5pt; line-height: 1.5; padding: 0.08rem 0; padding-left: 0.8rem; position: relative; }
+        .experience-item li::before { content: "•"; position: absolute; left: 0; color: #667eea; font-size: 10pt; }
+        .experience-item strong { color: #333; }
+        .education-item { margin-bottom: 0.55rem; }
+        .education-item:last-child { margin-bottom: 0; }
+        .education-degree { font-weight: 600; color: #333; font-size: 10.5pt; }
+        .education-school { color: #667eea; font-size: 10pt; }
+        .education-meta { font-size: 9pt; color: #666; }
+        .skill-category { margin-bottom: 0.45rem; }
+        .skill-category:last-child { margin-bottom: 0; }
+        .skill-category h3 { font-size: 10pt; color: #667eea; margin-bottom: 0.15rem; }
+        .skill-category ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.2rem; }
+        .skill-category li { color: #444; font-size: 9pt; background: #f5f7fa; padding: 0.1rem 0.4rem; border-radius: 2px; }
+        .languages-list { font-size: 9.5pt; color: #444; }
+        .lang-item { margin-bottom: 0.15rem; }
+        .lang-item:last-child { margin-bottom: 0; }
+        .lang-name { font-weight: 600; }
+        .lang-level { color: #666; }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <header class="header">
+            <div class="header-photo">
+                <img src="images/profile.jpg" alt="Priscilla Puspita">
+            </div>
+            <div class="header-content">
+                <h1>PRISCILLA PUSPITA</h1>
+                <p class="tagline">Junior B2B Marketer</p>
+                <div class="contact-info">
+                    <span>📍 Lelystad</span>
+                    <span>📞 +31 616 266402</span>
+                    <span>✉️ priscillapuspita11@gmail.com</span>
+                    <span>💼 linkedin.com/in/priscillapuspita</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="profile-section">
+            <h2>Profile</h2>
+            <p class="profile-text">Curious and proactive marketer with <strong>2+ years</strong> of experience creating content, managing campaigns, and coordinating events across international organizations. Skilled in SEO-friendly copywriting, multi-channel campaigns, and turning ideas into content that connects. Background includes science communication research on making complex technical topics accessible to broad audiences. Excited about bringing these skills to health tech. <strong>Available immediately.</strong></p>
+        </section>
+
+        <div class="two-column">
+            <div class="left-column">
+                <section class="section">
+                    <h2>Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="experience-title">Marketing & Communications Intern</span>
+                            <span class="experience-company">— SkyTeam</span>
+                        </div>
+                        <div class="experience-meta">Amstelveen • 2025-2026</div>
+                        <ul>
+                            <li>Created <strong>SEO-optimized content</strong> for web, email newsletters, and social media reaching <strong>500K+ users</strong> across <strong>18 member airlines</strong></li>
+                            <li>Executed <strong>email newsletters</strong> using <strong>HubSpot</strong> and monitored media coverage via <strong>Meltwater</strong></li>
+                            <li>Coordinated <strong>quarterly corporate events</strong> including vendor management and on-site support</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="experience-title">Recruitment Communications</span>
+                            <span class="experience-company">— GoTo Group</span>
+                        </div>
+                        <div class="experience-meta">Jakarta • 2021-2022</div>
+                        <ul>
+                            <li>Developed <strong>email communication templates</strong> for internal and external stakeholder communications</li>
+                            <li>Managed <strong>200+ monthly workflows</strong> using CRM and marketing automation platforms</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="experience-title">Public Relations Coordinator</span>
+                            <span class="experience-company">— Occam Komunikasi</span>
+                        </div>
+                        <div class="experience-meta">Jakarta • 2021</div>
+                        <ul>
+                            <li>Wrote <strong>SEO-friendly copy</strong> including press releases and social media content for B2B tech clients</li>
+                            <li>Created visual content using <strong>Canva</strong> and supported event coordination</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Garena -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="experience-title">Publishing Intern</span>
+                            <span class="experience-company">— Garena</span>
+                        </div>
+                        <div class="experience-meta">Jakarta • 2020</div>
+                        <ul>
+                            <li>Supported daily content publishing for <strong>Free Fire</strong> across MENA region</li>
+                            <li>Ensured asset readiness and <strong>localization accuracy</strong> for regional content delivery</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- GSB Volunteering -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="experience-title">Research Volunteer</span>
+                            <span class="experience-company">— De Groninger Studentenbond</span>
+                        </div>
+                        <div class="experience-meta">Groningen • 2024-2026</div>
+                        <ul>
+                            <li>Contributed to research on <strong>educational quality</strong> through survey development and data analysis</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <div class="right-column">
+                <section class="section">
+                    <h2>Education</h2>
+                    
+                    <div class="education-item">
+                        <div class="education-degree">Master's in Media Studies, Datafication</div>
+                        <div class="education-school">University of Groningen</div>
+                        <div class="education-meta">2023-2026</div>
+                        <div class="thesis">
+                            <span class="thesis-label">Thesis (8.8):</span> "The Strategic Science Communication of NASA & SpaceX on Instagram" — analyzing how complex technical/scientific topics are communicated to general audiences
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="education-degree">Bachelor's in International Relations</div>
+                        <div class="education-school">Parahyangan Catholic University</div>
+                        <div class="education-meta">2016-2020</div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>Skills</h2>
+                    
+                    <div class="skill-category">
+                        <h3>Content & Digital Marketing</h3>
+                        <ul>
+                            <li>SEO Copywriting</li>
+                            <li>Social Media Management</li>
+                            <li>Email Marketing</li>
+                            <li>HubSpot</li>
+                            <li>Meltwater</li>
+                            <li>Google Ads</li>
+                            <li>Hootsuite</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Creative & Coordination</h3>
+                        <ul>
+                            <li>Canva</li>
+                            <li>Photoshop</li>
+                            <li>Event Logistics</li>
+                            <li>Vendor Management</li>
+                            <li>Google Analytics</li>
+                            <li>ClickUp</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>Languages</h2>
+                    <div class="languages-list">
+                        <div class="lang-item">
+                            <span class="lang-name">English</span> <span class="lang-level">— Native-level</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-name">Indonesian</span> <span class="lang-level">— Native</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-name">Dutch</span> <span class="lang-level">— A2-B1</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
