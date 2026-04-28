@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priscilla Puspita - CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 10pt;
+            line-height: 1.35;
+            color: #333;
+            background: #f5f5f5;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .cv-container {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            padding: 15mm 12mm 12mm 12mm;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #667eea;
+            margin-bottom: 12px;
+        }
+
+        .header-photo img {
+            width: 90px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 2px solid #667eea;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .header h1 {
+            font-size: 22pt;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .header .tagline {
+            color: #667eea;
+            font-weight: 500;
+            font-size: 11pt;
+            margin-bottom: 8px;
+        }
+
+        .header .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 9pt;
+            color: #666;
+        }
+
+        /* Two Column Layout */
+        .content-wrapper {
+            display: flex;
+            flex: 1;
+            gap: 15px;
+        }
+
+        .main-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sidebar-column {
+            width: 60mm;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sidebar-box {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 8px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 12pt;
+            color: #667eea;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid #e0e7ff;
+            font-weight: 600;
+        }
+
+        .sidebar-box .section-title {
+            font-size: 11pt;
+            border-bottom: 1px solid #667eea;
+        }
+
+        /* Profile */
+        .profile-text {
+            color: #555;
+            font-size: 10pt;
+            text-align: justify;
+            line-height: 1.4;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 10px;
+        }
+
+        .experience-header {
+            margin-bottom: 2px;
+        }
+
+        .experience-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 10.5pt;
+        }
+
+        .experience-company {
+            color: #667eea;
+            font-weight: 500;
+            font-size: 10pt;
+        }
+
+        .experience-meta {
+            display: flex;
+            gap: 8px;
+            font-size: 9pt;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        .experience-item li {
+            color: #555;
+            font-size: 9.5pt;
+            position: relative;
+            padding-left: 10px;
+            margin-bottom: 3px;
+            line-height: 1.3;
+        }
+
+        .experience-item li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 8px;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-degree {
+            font-weight: 600;
+            color: #333;
+            font-size: 9.5pt;
+            line-height: 1.3;
+        }
+
+        .education-school {
+            color: #667eea;
+            font-size: 9pt;
+        }
+
+        .education-meta {
+            font-size: 8.5pt;
+            color: #666;
+            line-height: 1.3;
+            margin-top: 2px;
+        }
+
+        .sidebar-box .education-item {
+            margin-bottom: 10px;
+        }
+
+        .sidebar-box .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Skills */
+        .skill-category {
+            margin-bottom: 10px;
+        }
+
+        .skill-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-category h3 {
+            font-size: 10pt;
+            color: #667eea;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        .skill-category li {
+            color: #555;
+            font-size: 9.5pt;
+            position: relative;
+            padding-left: 10px;
+            margin-bottom: 2px;
+        }
+
+        .skill-category li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+
+        /* Languages */
+        .language-item {
+            margin-bottom: 6px;
+            font-size: 10pt;
+        }
+
+        .language-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .language-label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .language-level {
+            color: #666;
+            font-size: 9.5pt;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                width: 210mm;
+                height: 297mm;
+                padding: 15mm 12mm 12mm 12mm;
+            }
+            
+            .sidebar-box {
+                background: #f0f0f0 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* Screen view */
+        @media screen {
+            body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-photo">
+                <img src="images/profile.jpg" alt="Priscilla Puspita">
+            </div>
+            <div class="header-content">
+                <h1>PRISCILLA PUSPITA</h1>
+                <p class="tagline">Reporting & Communications Specialist</p>
+                <div class="contact-info">
+                    <span>📍 Amsterdam / Lelystad</span>
+                    <span>📞 +31 616 266402</span>
+                    <span>✉️ priscillapuspita11@gmail.com</span>
+                    <span>💼 linkedin.com/in/priscillapuspita</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Two Column Content -->
+        <div class="content-wrapper">
+            <!-- Main Column -->
+            <div class="main-column">
+                <!-- Profile -->
+                <div class="section">
+                    <div class="section-title">Profile</div>
+                    <p class="profile-text">Master's graduate in Media Studies (Datafication) with hands-on experience in operational communications, data-driven reporting, and cross-functional stakeholder coordination. Proven track record producing recurring communications for 18 international airlines, translating complex data into executive-ready narratives. Skilled in data visualization, dashboard interpretation, and AI-assisted content production for professional presentations.</p>
+                </div>
+
+                <!-- Experience -->
+                <div class="section">
+                    <div class="section-title">Experience</div>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">Marketing & Communications Intern</div>
+                            <div class="experience-company">SkyTeam Airline Alliance</div>
+                        </div>
+                        <div class="experience-meta">📍 Amstelveen | 📅 2025 — 2026</div>
+                        <ul>
+                            <li>Produced <strong>recurring operational communications</strong> (monthly newsletters, press releases) for <strong>18 member airlines</strong> across 5 continents, ensuring consistent <strong>data-driven messaging</strong></li>
+                            <li>Coordinated <strong>cross-functional projects</strong> across marketing, operations, and member airline teams, managing <strong>stakeholder inputs and timelines</strong></li>
+                            <li>Translated <strong>performance metrics and alliance data</strong> into <strong>executive-ready presentations and reports</strong> for senior leadership</li>
+                            <li>Developed <strong>standardized reporting templates</strong> for monthly in-flight magazine content and <strong>social media performance tracking</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">Recruitment Coordinator</div>
+                            <div class="experience-company">GoTo Group</div>
+                        </div>
+                        <div class="experience-meta">📍 Jakarta | 📅 2021 — 2022</div>
+                        <ul>
+                            <li>Generated <strong>weekly recruitment analytics reports</strong> tracking <strong>200+ monthly applications</strong> across multiple hiring pipelines</li>
+                            <li>Created <strong>data visualizations and dashboards</strong> using Excel to present <strong>hiring metrics</strong> to regional leadership</li>
+                            <li>Coordinated communications between <strong>HR, hiring managers, and candidates</strong> across multiple office locations</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">Public Relations Coordinator</div>
+                            <div class="experience-company">Occam Komunikasi</div>
+                        </div>
+                        <div class="experience-meta">📍 Jakarta | 📅 2021</div>
+                        <ul>
+                            <li>Drafted <strong>press releases, executive presentations,</strong> and <strong>data-backed client reports</strong> for tech and corporate clients</li>
+                            <li>Managed <strong>simultaneous projects across multiple stakeholders</strong>, delivering communications materials under <strong>tight deadlines</strong></li>
+                            <li>Supported <strong>crisis communications</strong> with rapid-response content and <strong>stakeholder briefing documents</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Column -->
+            <div class="sidebar-column">
+                <!-- Education -->
+                <div class="sidebar-box">
+                    <div class="section">
+                        <div class="section-title">Education</div>
+                        
+                        <div class="education-item">
+                            <div class="education-degree">Master's in Media Studies</div>
+                            <div class="education-school">University of Groningen</div>
+                            <div class="education-meta">📅 2023 — 2026<br>Thesis: The Strategic Science Communication of NASA and SpaceX on Instagram (8.8)</div>
+                        </div>
+
+                        <div class="education-item">
+                            <div class="education-degree">Bachelor's in International Relations</div>
+                            <div class="education-school">Universitas Katolik Parahyangan</div>
+                            <div class="education-meta">📅 2016 — 2020</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Skills -->
+                <div class="sidebar-box">
+                    <div class="section">
+                        <div class="section-title">Key Skills</div>
+                        
+                        <div class="skill-category">
+                            <h3>Reporting & Analytics</h3>
+                            <ul>
+                                <li>Operational Reporting</li>
+                                <li>Data Visualisation</li>
+                                <li>Dashboard Interpretation (Power BI — basic)</li>
+                                <li>Excel & Pivot Tables</li>
+                                <li>RStudio for data analysis</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>Communications & Presentations</h3>
+                            <ul>
+                                <li>Executive Presentations</li>
+                                <li>AI-assisted Content Production</li>
+                                <li>Cross-functional Stakeholder Management</li>
+                                <li>PowerPoint & Canva</li>
+                                <li>Press Releases & Newsletters</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Coordination & Operations</h3>
+                            <ul>
+                                <li>Multi-site Stakeholder Communication</li>
+                                <li>Project Coordination</li>
+                                <li>Process Documentation</li>
+                                <li>Notion & HubSpot</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="sidebar-box">
+                    <div class="section">
+                        <div class="section-title">Languages</div>
+                        
+                        <div class="language-item">
+                            <span class="language-label">English</span> — <span class="language-level">Fluent</span>
+                        </div>
+                        
+                        <div class="language-item">
+                            <span class="language-label">Indonesian</span> — <span class="language-level">Native</span>
+                        </div>
+                        
+                        <div class="language-item">
+                            <span class="language-label">Dutch</span> — <span class="language-level">Conversational (A2-B1)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
