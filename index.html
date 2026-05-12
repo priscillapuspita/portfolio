@@ -782,36 +782,148 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            body,
+            nav,
+            section,
+            .hero,
+            .hero-content,
+            .experience-grid,
+            .experience-card,
+            .skills-container {
+                max-width: 100vw;
+            }
+
+            img,
+            video,
+            iframe {
+                max-width: 100%;
+            }
+
+            nav {
+                padding: 0.75rem 0;
+            }
+
+            nav .container {
+                padding: 0 1rem;
+                display: block;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+
+            nav .logo {
+                font-size: 1rem;
+                line-height: 1.2;
+            }
+
+            nav .container > div {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 0.4rem 0.75rem;
+                margin-top: 0.5rem;
+            }
+
             .hero {
                 min-height: auto;
-                padding: 5rem 1.5rem 3rem;
+                padding: 6.5rem 1.25rem 3rem;
             }
 
             .hero-content {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 2.25rem;
                 text-align: center;
+                min-width: 0;
             }
 
             .hero-text {
                 text-align: center;
+                width: 100%;
+                max-width: min(100%, 20rem);
+                margin: 0 auto;
             }
 
             .hero h1 {
-                font-size: clamp(2.5rem, 12vw, 4rem);
+                font-size: clamp(2.05rem, 10.5vw, 2.9rem);
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                word-break: normal;
+                overflow-wrap: anywhere;
+            }
+
+            .hero .tagline {
+                font-size: 0.98rem;
+                line-height: 1.35;
+                max-width: 18rem;
+                margin-left: auto;
+                margin-right: auto;
+                overflow-wrap: anywhere;
             }
 
             .hero .description {
                 max-width: 100%;
+                font-size: 0.96rem;
+                margin-left: auto;
+                margin-right: auto;
+                width: min(100%, 18rem);
+                overflow-wrap: anywhere;
             }
 
             .hero-image img {
-                max-width: 280px;
+                max-width: min(280px, 78vw);
+            }
+
+            section {
+                padding: 3rem 1.15rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+                margin-bottom: 1.25rem;
+            }
+
+            #skills {
+                padding: 3.25rem 1.15rem !important;
+            }
+
+            #skills > div {
+                max-width: 17.5rem !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            #skills h2 {
+                font-size: 2rem !important;
+                text-align: left;
+            }
+
+            #skills p {
+                font-size: 1rem !important;
+                max-width: 100%;
+            }
+
+            #skills div[style*="display: flex"] {
+                gap: 0.55rem !important;
+                width: 100% !important;
+                max-width: 17.5rem !important;
+                overflow: hidden;
+            }
+
+            #skills span {
+                max-width: 100%;
+                overflow-wrap: anywhere;
+                white-space: normal;
+                padding: 0.5rem 0.8rem !important;
+                font-size: 0.88rem !important;
             }
 
             nav a {
-                margin-left: 1rem;
-                font-size: 0.9rem;
+                margin-left: 0;
+                font-size: 0.82rem;
             }
 
             .contact-info {
@@ -822,6 +934,138 @@
             .experience-card .meta {
                 flex-direction: column;
                 gap: 0.5rem;
+            }
+
+            .experience-card {
+                padding: 1.15rem;
+                border-radius: 12px;
+                min-width: 0;
+                max-width: 17.5rem;
+                margin-left: auto;
+                margin-right: auto;
+                overflow: hidden;
+            }
+
+            .experience-card h3 {
+                font-size: 1.25rem;
+                line-height: 1.25;
+                overflow-wrap: anywhere;
+            }
+
+            .experience-card p,
+            .experience-card li {
+                font-size: 0.95rem;
+                overflow-wrap: anywhere;
+            }
+
+            .experience-card h4,
+            .section-subtitle {
+                overflow-wrap: anywhere;
+                max-width: 17.5rem !important;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .experience-card li {
+                padding-left: 1.2rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                min-width: 0;
+            }
+
+            .gallery-item {
+                min-height: 210px;
+                aspect-ratio: 4 / 3;
+                min-width: 0;
+                width: 100%;
+            }
+
+            .gallery-item img {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .instagram-gallery {
+                display: grid;
+                grid-template-columns: 1fr;
+                justify-items: center;
+                gap: 1.5rem;
+            }
+
+            .phone-frame {
+                width: min(260px, 82vw);
+                height: min(530px, 168vw);
+            }
+
+            .article-grid,
+            .skills-grid,
+            .languages-grid,
+            .thesis-gallery {
+                grid-template-columns: 1fr !important;
+            }
+
+            .article-link {
+                align-items: flex-start;
+                gap: 0.75rem;
+                overflow-wrap: anywhere;
+            }
+
+            .education-card {
+                padding: 1.25rem;
+                border-radius: 12px;
+            }
+
+            .thesis-keywords {
+                gap: 0.4rem !important;
+            }
+
+            .contact-item {
+                justify-content: center;
+                overflow-wrap: anywhere;
+            }
+
+            .phone-screen .overlay,
+            .gallery-item .overlay {
+                opacity: 1;
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav .container {
+                padding: 0 0.9rem;
+            }
+
+            .hero {
+                padding-top: 7.25rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.95rem, 10vw, 2.65rem);
+            }
+
+            .hero .cta {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .experience-card {
+                padding: 1rem;
+            }
+
+            .phone-frame {
+                width: min(235px, 78vw);
+                height: min(480px, 160vw);
+            }
+
+            .gallery-item {
+                min-height: 180px;
             }
         }
 
@@ -899,8 +1143,8 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>PRISCILLA<br>PUSPITA</h1>
-                <p class="tagline">CRO, Website Operations & Digital Content</p>
-                <p class="description">I combine content, analytics, WordPress operations, and workflow automation to improve digital journeys.<br>Available for junior growth, CRO, and website roles.</p>
+                <p class="tagline">CRO & Website Operations</p>
+                <p class="description">I combine content, analytics, WordPress, and workflow automation to improve digital journeys.<br>Available for junior growth and CRO roles.</p>
                 <a href="#experience" class="cta">View work</a>
             </div>
             <div class="hero-image">
@@ -926,9 +1170,9 @@
                 <span style="background: #f0f0f0; padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.95rem; color: #333;">ClickUp</span>
                 <span style="background: #f0f0f0; padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.95rem; color: #333;">Hootsuite</span>
                 <span style="background: #f0f0f0; padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.95rem; color: #333;">WordPress</span>
-                <span style="background: #f0f0f0; padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.95rem; color: #333;">WordPress Operations</span>
-                <span style="background: #f0f0f0; padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.95rem; color: #333;">A/B Testing Concepts</span>
-                <span style="background: #f0f0f0; padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.95rem; color: #333;">CRO Testing Roadmaps</span>
+                <span style="background: #f0f0f0; padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.95rem; color: #333;">WP Operations</span>
+                <span style="background: #f0f0f0; padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.95rem; color: #333;">A/B Testing</span>
+                <span style="background: #f0f0f0; padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.95rem; color: #333;">CRO Roadmaps</span>
                 <span style="background: #f0f0f0; padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.95rem; color: #333;">Notion</span>
                 <span style="background: #f0f0f0; padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.95rem; color: #333;">Workflow Automation</span>
                 <span style="background: #f0f0f0; padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.95rem; color: #333;">OpenClaw</span>
@@ -951,7 +1195,7 @@
             
             <!-- SkyTeam -->
             <div class="experience-card">
-                <h3>Marketing & Communications Intern</h3>
+                <h3>Marketing & Comms Intern</h3>
                 <p class="company">SkyTeam Airline Alliance</p>
                 <div class="meta">
                     <span class="date">2025 - 2026</span>
