@@ -550,6 +550,50 @@
             background: white;
         }
 
+        .intro-video-section {
+            background: #f8f9fa;
+            padding: 5rem 2rem;
+        }
+
+        .intro-video-container {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .intro-video-header {
+            max-width: 720px;
+            margin-bottom: 2rem;
+        }
+
+        .intro-video-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #0a0a0a;
+        }
+
+        .intro-video-header p {
+            color: #666;
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+
+        .intro-video-frame {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border: 1px solid #eceef3;
+        }
+
+        .intro-video-frame video {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            background: #111;
+        }
+
         .skills-container {
             display: grid;
             gap: 2rem;
@@ -921,6 +965,26 @@
                 font-size: 0.88rem !important;
             }
 
+            .intro-video-section {
+                padding: 3.25rem 1.15rem;
+            }
+
+            .intro-video-container {
+                max-width: 100%;
+            }
+
+            .intro-video-header h2 {
+                font-size: 2rem;
+            }
+
+            .intro-video-header p {
+                font-size: 1rem;
+            }
+
+            .intro-video-frame {
+                border-radius: 10px;
+            }
+
             nav a {
                 margin-left: 0;
                 font-size: 0.82rem;
@@ -1149,6 +1213,22 @@
             </div>
             <div class="hero-image">
                 <img src="images/profile.jpg" alt="Priscilla Puspita">
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Video Section -->
+    <section class="intro-video-section" aria-labelledby="intro-video-title">
+        <div class="intro-video-container">
+            <div class="intro-video-header">
+                <h2 id="intro-video-title">A quick introduction</h2>
+                <p>A short video on how I approach marketing, what I have worked on, and what makes me different as an early-career digital and growth marketer.</p>
+            </div>
+            <div class="intro-video-frame">
+                <video controls preload="metadata" poster="images/profile.jpg">
+                    <source src="videos/priscilla-intro.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>
