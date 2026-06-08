@@ -562,14 +562,48 @@
 
         .intro-video-header {
             max-width: 720px;
-            margin-bottom: 2rem;
+            margin: 0 auto 2.25rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
         }
 
         .intro-video-header h2 {
-            font-size: 2.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 700;
-            margin-bottom: 0.75rem;
+            margin: 0;
+            padding: 1rem 1.45rem;
             color: #0a0a0a;
+            border: 2px solid #0a0a0a;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.78);
+            box-shadow: 8px 8px 0 #d9ddf8;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .intro-video-header h2::before {
+            content: "▶";
+            width: 2.25rem;
+            height: 2.25rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+            border-radius: 999px;
+            background: #0a0a0a;
+            color: #fff;
+            font-size: 0.9rem;
+            padding-left: 0.1rem;
+        }
+
+        .intro-video-header h2:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 12px 12px 0 #c7d2fe;
+            border-color: #667eea;
         }
 
         .intro-video-header p {
@@ -973,8 +1007,22 @@
                 max-width: 100%;
             }
 
+            .intro-video-header {
+                margin-bottom: 1.75rem;
+            }
+
             .intro-video-header h2 {
-                font-size: 2rem;
+                width: 100%;
+                gap: 0.65rem;
+                padding: 0.9rem 1rem;
+                font-size: clamp(1.65rem, 8vw, 2rem);
+                box-shadow: 6px 6px 0 #d9ddf8;
+            }
+
+            .intro-video-header h2::before {
+                width: 1.9rem;
+                height: 1.9rem;
+                font-size: 0.75rem;
             }
 
             .intro-video-header p {
